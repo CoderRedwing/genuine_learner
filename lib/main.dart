@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:genuine_learner/color.dart';
+import 'package:genuine_learner/home_screen.dart';
 import 'package:genuine_learner/login_page.dart';
 import 'package:genuine_learner/signup_page.dart';
 import 'home_page.dart';
@@ -13,10 +15,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: kBackgroundColor,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
+      ),
 
-      home: SignUpPage(),
+      home: const SignUpPage(),
     );
   }
 }

@@ -1,12 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:genuine_learner/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import 'home_screen.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  bool passwordVisible=false;
+@override
+void initState(){
+  super.initState();
+  passwordVisible=true;
+}
+
+  @override
   Widget build(BuildContext context) {
+
     List images = [
       "g.png",
       "t.png",
@@ -14,19 +30,18 @@ class SignUpPage extends StatelessWidget {
     ];
     return Scaffold(
       resizeToAvoidBottomInset : false,
-      backgroundColor: Colors.greenAccent,
+      backgroundColor:  Colors.cyan.shade100,
       body: Column(
         children: [
           const SizedBox(
-            height: 100,
+            height: 50,
           ),
-             const CircleAvatar(
+              const CircleAvatar(
+
             radius: 60,
-            backgroundColor: Colors.white,
 
-            backgroundImage: AssetImage('img/log.png'),
-
-          ),
+               backgroundImage: AssetImage('img/signup.png'),
+           ),
 
           Container(
 
@@ -35,52 +50,112 @@ class SignUpPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "Sign up",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 70,
-                    color: Colors.black,
+                Text(
+                  "Hello",
+                  style: GoogleFonts.alegreya(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+
                 ),
-                const Text(
-                  "Welcome to our family ",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black54,
+                Text(
+                  "Welcome to our family",
+                  style: GoogleFonts.alegreya(
+                    textStyle:  TextStyle(
+                      color: Colors.deepPurple.shade700,
+                      fontSize: 20,
+
+                    ),
                   ),
+
                 ),
                 const SizedBox(
-                  height: 100,
+                  height: 40,
+
                 ),
                 Center(
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            blurRadius: 10,
-                            spreadRadius: 7,
+                            blurRadius: 20,
+                            spreadRadius: 3,
                             offset: Offset(1,1),
                             color: Colors.grey.withOpacity(0.2),
                           )
                         ]
                     ),
                     child: TextField(
+                      maxLines: 1,
                       decoration: InputDecoration(
-                        hintText: "Email",
-                        alignLabelWithHint: true,
-                        icon: const Icon(Icons.email),
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        hintText: "Name",
+                        alignLabelWithHint: false,
+                          filled: true,
+                        icon: Icon(Icons.people),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(20),
                           borderSide: const BorderSide(
                             color: Colors.white,
                             width: 1,
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Colors.white,
+                             width: 1,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+
+                          borderRadius: BorderRadius.circular(20),
+
+                        ),
+                      ),
+
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 20,
+                            spreadRadius: 3,
+                            offset: Offset(1,1),
+                            color: Colors.grey.withOpacity(0.2),
+                          )
+                        ]
+                    ),
+                    child: TextField(
+                      maxLines: 1,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        hintText: "Roll No.",
+                        alignLabelWithHint: false,
+                        filled: true,
+                        icon: Icon(Icons.keyboard),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Colors.white,
+                            width: 1,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
                           borderSide: const BorderSide(
                             color: Colors.white,
                             width: 1,
@@ -88,20 +163,119 @@ class SignUpPage extends StatelessWidget {
                         ),
                         border: OutlineInputBorder(
 
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(20),
 
                         ),
                       ),
+
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
+                ),
+                Center(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 20,
+                            spreadRadius: 3,
+                            offset: Offset(1,1),
+                            color: Colors.grey.withOpacity(0.2),
+                          )
+                        ]
+                    ),
+                    child: TextField(
+                      maxLines: 1,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        hintText: "Email",
+                        alignLabelWithHint: false,
+                        filled: true,
+                        icon: Icon(Icons.email),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Colors.white,
+                            width: 1,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Colors.white,
+                            width: 1,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+
+                          borderRadius: BorderRadius.circular(20),
+
+                        ),
+                      ),
+
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 20,
+                            spreadRadius: 3,
+                            offset: Offset(1,1),
+                            color: Colors.grey.withOpacity(0.2),
+                          )
+                        ]
+                    ),
+                    child: TextField(
+                      maxLines: 1,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        hintText: "Phone No.",
+                        alignLabelWithHint: false,
+                        filled: true,
+                        icon: Icon(Icons.phone),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Colors.white,
+                            width: 1,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Colors.white,
+                            width: 1,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+
+                          borderRadius: BorderRadius.circular(20),
+
+                        ),
+                      ),
+
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           blurRadius: 10,
@@ -112,20 +286,35 @@ class SignUpPage extends StatelessWidget {
                       ]
                   ),
                   child: TextField(
-
+                        maxLines: 1,
+                    obscureText: passwordVisible,
                     decoration: InputDecoration(
-
+                      contentPadding: const EdgeInsets.symmetric(vertical: 10),
                       hintText: "Password",
+
                       icon: const Icon(Icons.password),
+                      suffixIcon: IconButton(
+                        icon: Icon(passwordVisible? Icons.visibility
+                            :Icons.visibility_off),
+                        onPressed: (){
+                          setState((){
+                            passwordVisible = !passwordVisible;
+                          },
+                          );
+                        },
+                      ),
+                        alignLabelWithHint: false,
+                       filled: true,
+
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(20),
                         borderSide: const BorderSide(
                           color: Colors.white,
                           width: 1,
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(20),
                         borderSide: const BorderSide(
                           color: Colors.white,
                           width: 1,
@@ -133,102 +322,112 @@ class SignUpPage extends StatelessWidget {
                       ),
                       border: OutlineInputBorder(
 
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(20),
 
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 30,
-                ),
-
-                const SizedBox(
-                  height: 50,
+                  height: 70,
                 ),
 
 
-                  Container(
 
-                    margin: const EdgeInsets.only(left: 70),
-                    height: 60,
-                    width: 400,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 10,
-                            spreadRadius: 7,
-                            offset: Offset(1,1),
-                            color: Colors.grey.withOpacity(0.2),
-                          )
-                        ]
-                    ),
-                    child: const Center(child:
-                    Text(
-                      "Sign up",
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                  Center(
+                    child: Container(
+
+
+                      height: 60,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          color: Colors.blue.shade500,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10,
+                              spreadRadius: 7,
+                              offset: Offset(1,1),
+                              color: Colors.grey.withOpacity(0.2),
+                            )
+                          ]
                       ),
-                    )),
+                      child:  Center(child:
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return  const HomeScreen(
+
+                            );
+                          }));
+                        },
+                        child: const Text(
+                          "Sign up",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )),
+                    ),
                   ),
 
                 const SizedBox(
-                  height: 140,
+                  height: 20,
+                ),
+                const SizedBox(
+                  height: 25,
                 ),
                 Center(
-                  child: RichText(
-                    text: const TextSpan(
-                        text: "Sign up using one of the following methods",
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Have an account",
                         style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black54,
+
+                          fontSize: 20,
+                          color: Colors.blueAccent,
+                        ),
+                      ),
+
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      InkWell(
+
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return  const LoginPage(
+
+                            );
+                          }));
+                        },
+                        child: const Text(
+                          "Sign in",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                            color: Colors.blueAccent,
+                          ),
 
                         ),
-                        children: [
-
-                          TextSpan(
-                              text: "  Sign ",
-
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              )
-                          ),
-                        ]
-                    ),
+                      ),
+                    ],
 
                   ),
                 ),
+
                 Center(
                   child: Container(
-                    child: Wrap(
-
-                      children: List<Widget>.generate(
-                          3, (index){
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: CircleAvatar(
-                                radius: 45,
-                                backgroundColor: Colors.greenAccent,
-                                child: CircleAvatar(
-                                  radius: 40,
-                                  backgroundColor: Colors.white,
-                                  backgroundImage: AssetImage(
-                                    "img/"+images[index]
-                                  ),
-                                ),
-                              ),
-                            );
-                      }
-                      ),
+                    height: 2,
+                    width: 240,
+                    decoration: const BoxDecoration(
+                      color: Colors.grey,
                     ),
                   ),
                 )
+
 
               ],
             ),
